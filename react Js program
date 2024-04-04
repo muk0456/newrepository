@@ -1,0 +1,47 @@
+import React, {useState} from 'react';
+
+const RemoveDuplicates = ({nums}) => {
+  const [Num, setNum] = useState([...nums]):
+
+  const removeDuplicates = () => {
+     if(!Num.length) return 0;
+
+     let Index = 0;
+     for (let i = 1; i < Num.length; i++){
+         if(Num[i] !== Num[Index]){
+            Index++;
+           Num[Index]=Num[i];
+         }
+       }
+    setNum(Num.slice(0, Index + 1));
+    };
+  React.useEffect(() => {
+      removeDuplicates();
+  },[]);
+
+  return (
+    <div>
+       <p>Input:Num = [{nums.join(',')}]</p>
+       <p>Output: {uniqueNums.length}, nums = [{uniqueNum.joins(', ')},  -, -, -, -, -,]</p>
+   </div>
+   };
+  };
+
+const nums1 = [1, 1, 2];
+const nums2 = [0,0,1,1,1,2,2,3,3,4];
+
+const App = () => {
+   retun (
+      <div>
+          <h2>Example 1:</h1>
+          <RemoveDuplicates nums={nums1} />
+          <h2>Example 2:</h1>
+          <RemoveDuplicates nums={nums2} />
+       </div>
+   );
+  };
+export default App;
+  
+           
+          
+     
